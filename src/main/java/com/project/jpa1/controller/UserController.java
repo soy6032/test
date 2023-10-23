@@ -25,7 +25,7 @@ public class UserController {
     private final NoteService noteService;
 
     @PostMapping("/login")
-    public UserDto logins(@RequestBody UserDto dto, HttpSession session){
+    public UserDto login(@RequestBody UserDto dto, HttpSession session){
         dto = userService.login(dto);
         if(dto != null) {
             session.setAttribute("user", dto);
